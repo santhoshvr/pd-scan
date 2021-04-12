@@ -27,6 +27,11 @@ jobs:
           subfinder -dL input/domains.txt -config config/subfinder-config.yaml -o output/passive_subdomains.txt
         shell: bash
 
+      - name: Notifier
+        run: |
+          echo subfinder `cat input/domains.txt` is finished | notify -silent -biid 132456789 -discord -discord-webhook-url https://discord.com/api/webhooks/807671084111101982/32Afn4Ll1x-n2tGcSsBMlSkGvfidxf3pWTKSyEnT3dACuMW2nfGe5bEvUBc3ERhLugr- -discord-username BHunt-Server
+        shell: bash
+
       - name: Sorting the output results
         run: |
           find output -type f -exec sort {} -o {} \;
@@ -38,9 +43,9 @@ jobs:
 
       - name: Commit files
         run: |
-          git config --global user.email "sandeep@projectdiscovery.io"
-          git config --global user.name "projectdiscovery"
-          git commit -m "PD-Actions report" -a --allow-empty
+          git config --global user.email "28789132+santhoshvr@users.noreply.github.com"
+          git config --global user.name "santhoshvr"
+          git commit -m "PD-Actions report for scopely.com" -a --allow-empty
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
